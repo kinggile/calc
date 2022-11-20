@@ -1,16 +1,23 @@
 
 import java.util.Scanner;
 
-public class Calculator {
+class CalculatorHelper{
     public static void main(String[] args) throws Exception {
-        System.out.println(calc(""));
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите выражение: ");
+        String input = sc.nextLine();
+        System.out.println(Calculator.calc(input));
     }
+}
 
+public class Calculator{
     public static String calc(String input) throws Exception {
         int num1, num2;
+        /*
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите выражение: ");
         input = sc.nextLine();
+         */
         String[] regexInput = input.split(" ");
         boolean romIsTrue = false;
         int result;
@@ -96,7 +103,7 @@ public class Calculator {
 
     public static String getConvertNumToRom(int arabNum) throws Exception {
         String convert = null;
-        if(arabNum > 0) {
+        if (arabNum > 0) {
             String[] roman = {"O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
                     "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX", "XL",
                     "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX",
@@ -106,7 +113,7 @@ public class Calculator {
                     "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C"};
             convert = roman[arabNum];
             return convert;
-        }else{
+        } else {
             throw new Exception("in romNums cannot be 0 or negatives");
         }
 
