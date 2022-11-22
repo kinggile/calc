@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-class CalculatorHelper{
+class CalculatorHelper {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите выражение: ");
@@ -10,7 +10,7 @@ class CalculatorHelper{
     }
 }
 
-public class Calculator{
+public class Calculator {
     public static String calc(String input) throws Exception {
         int num1, num2;
         /*
@@ -50,6 +50,7 @@ public class Calculator{
             output = getConvertNumToRom(result);
         } else if (num1 > 0 && num1 < 11 && num2 > 0 && num2 < 11) {
             output = String.valueOf(result);
+            // output = Integer.toString(result);
         } else {
             throw new Exception("0<nums<11");
         }
